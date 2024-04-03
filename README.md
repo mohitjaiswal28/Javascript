@@ -9,3 +9,4 @@
 - Operators
 - Memory (Stack and Heap)
 - String ✅
+- Number and Math ✅
