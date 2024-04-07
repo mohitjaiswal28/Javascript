@@ -10,3 +10,6 @@
 - Memory (Stack and Heap)
 - String ✅
 - Number and Math ✅
+- Date and Time ✅
+- Array ✅
+- Object ✅
