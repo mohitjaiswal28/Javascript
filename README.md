@@ -1,7 +1,7 @@
 
 # Javascript
 
-## Basics
+## 1. Basics
 
 - Variables 
 - Datatypes
