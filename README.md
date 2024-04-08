@@ -14,3 +14,4 @@
 - Array ✅
 - Object ✅
 - Function
+- Scope
