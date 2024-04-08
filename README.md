@@ -13,3 +13,4 @@
 - Date and Time ✅
 - Array ✅
 - Object ✅
+- Function
