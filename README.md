@@ -13,5 +13,7 @@
 - Date and Time ✅
 - Array ✅
 - Object ✅
-- Function
+- Function and Arrow function
 - Scope
+- Hoisting
+- IIFE
