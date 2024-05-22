@@ -1,0 +1,19 @@
+
+body {
+    font-family: sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.clock {
+    background-color: orange;
+    padding: 2rem;
+    margin: 3rem 20rem;
+    border-radius: 10px;
+    color: #010101;
+    font-size: 3rem;
+    text-align: center;
+}

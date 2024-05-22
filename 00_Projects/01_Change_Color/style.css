@@ -1,0 +1,51 @@
+
+body {
+    font-family: sans-serif;
+}
+
+.header1 {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.header2 {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container:nth-child(1) {
+    background-color: red;
+}
+
+button {
+    padding: 3rem;
+    margin: 1rem;
+    transition: all ease-in-out 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#white {
+    background-color: white;
+}
