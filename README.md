@@ -18,3 +18,9 @@
 - Hoisting
 - IIFE
 - Control flow
+
+## 2. Important Topics
+
+- FMR (Filter, Map, Reduce)
+
+## 3. DOM
