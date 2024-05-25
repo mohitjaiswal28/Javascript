@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color using setInterval</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #header {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .container, .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 0.3rem;
+            transition: all ease-in-out 0.2s;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: translateY(-2px)
+        }
+
+        .main {
+            margin-top: 5rem;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1 id="header">Change color using setInterval</h1>
+
+    <div class="container">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <div class="main">
+
+    </div>
+
+    <script>
+        let randomColor = () => {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+
+            for (let i=0; i<6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        let change = () => {
+            let col = randomColor()
+            document.querySelector('#body').style.backgroundColor = col
+        }
+        
+        // setInterval
+        let setId = null;
+        let set = () => {
+            setId = setInterval(change, 300)  
+        }
+        document.querySelector('#start').addEventListener('click', set, false)
+        
+        // clearInterval
+        let clear = () => {
+            clearInterval(setId)
+            
+            // Restoring default background color
+            // document.querySelector('#body').style.backgroundColor = 'white'
+        }
+        document.querySelector('#stop').addEventListener('click', clear, false)
+
+    </script>
+</body>
+</html>

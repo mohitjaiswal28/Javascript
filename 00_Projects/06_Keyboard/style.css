@@ -1,0 +1,31 @@
+
+body {
+    font-family: sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#magic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+table {
+    border: 2px solid #010101;
+    background-color: antiquewhite;
+}
+
+th {
+    padding: 1rem;
+}

@@ -22,5 +22,16 @@
 ## 2. Important Topics
 
 - FMR (Filter, Map, Reduce)
+- Events
+- setTimeout / clearTimeout
+- setInterval / clearInterval
+- Promises
 
 ## 3. DOM
+
+## 4. Advanced Topics
+
+- API request using ***XMLHttpRequest()***
+- API request using ***fetch()***
+    - Using async/await
+    - Using .then/.catch/.finally

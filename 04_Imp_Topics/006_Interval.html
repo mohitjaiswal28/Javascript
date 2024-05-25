@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #header {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .container, .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 0.3rem;
+            transition: all ease-in-out 0.2s;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: translateY(-2px)
+        }
+
+        .main {
+            margin-top: 5rem;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">setInterval and clearInterval</h1>
+
+    <div class="container">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <div class="main">
+
+    </div>
+
+    <script>
+        let change = () => {
+            document.querySelector('.main').innerHTML = "Hello, I am Mohit Jaiswal"
+            console.log(`Hii, Mohit ${Math.random()}`);
+        }
+
+        // setInterval
+        let setId = null;
+        let set = () => {
+            setId = setInterval(change, 1000)  
+        }
+        document.querySelector('#start').addEventListener('click', set, false)
+        
+        // clearInterval
+        let clear = () => {
+            clearInterval(setId)
+        }
+        document.querySelector('#stop').addEventListener('click', clear, false)
+
+    </script>
+</body>
+</html>

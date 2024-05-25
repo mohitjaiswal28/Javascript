@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAeFBMVEUjHyAiHyAjHiAiHiAgHB0UDRAAAAAaFReEgoPBwMDf39/v7++2trb///+xsLBzcnL+/v5qaGmWlZWMiosJAAAMAAUeGRtCP0Chn6BZV1hRT1A2MjPZ2dlfXV08OTpKSEjQz89lY2MXEhR9e3z19fXHxsbn5+cqJifS2g27AAABfElEQVR4AWVRBaLkUAjjGUzdfdz2/jdcoLLyU6PQlBAAwDBgg9nuZousBef47gMqgge7Fvgra53lEtIpipMkjk4BvZO03X7kgk+zAzmFo40xDovsb5QVMscpzWHNCcHxaHDntqfsB4rOqqx+4JdxivZ8Oud8X3pVjGeOLx3OxZXoWtywqzhxR6HSxJ2yBwE9e+/7Zw9PlXcjZmIkxeqpUyueLx2oBXD4Xn8iNTnd1ijhlF+E+Aq7rzJeOHEqAw/9LIE2gN11umSMoRc9jInU6b1ppYp66G/CPAWrTutpQyPFaw++l+CD8AcG72Jw5zj6CnXmcF9iqy3PyGE3bovoVBS124pqGcD/YvN4LfHILgFV+TdTkJd1IvusXkvxuW92bLWJwySLu/GeomhF3Wn2RY6ZCXQtsxGf6MUfVN576Xe/nsM7K7+JyFuLyfUJByh8OIU7M+rIbIM5Pj1OH2YaywI+M3ony1nL1lggRH13iLTayGqMAGA95eb22JjfaOUa5/ipzPYAAAAASUVORK5CYII=" type="image/x-icon">
+    <title>API Request using XMLHttpRequest()</title>
+    <style>
+        body {
+            align-items: center;
+            background-color: #212121;
+            color: #f1f1f1;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        div {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        ol {
+            line-height: 2rem;
+        }
+
+        button {
+            background-color: #a6ffa5;
+            padding: 1rem 2rem;
+            border: 2px solid black;
+            border-radius: 2rem;
+            transition: all ease-in-out 0.2s;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        img {
+            border-radius: 100%;
+            width: 20rem;
+        }
+
+        .main {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            border: 1px solid #ddd;
+            padding: 30px 80px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .main div {
+            margin: 0 10px;
+        }
+
+        #img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 2rem;
+        }
+
+        #name {
+            margin: 1rem 0;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+            text-underline-offset: 5px;
+            text-decoration: underline;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            border: 1px solid #f1f1f1;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 3rem 20rem;
+        }
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        input {
+            margin: 0 0.5rem;
+            padding: 0.5rem 2rem;
+            border: 1px solid #f1f1f1;
+            border-radius: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        #spanlink {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub API request using XMLHttpRequest()</h1>
+    <!-- 
+        <div>
+            <p>
+                <ol>
+                    <li>UNSENT = 0</li>
+                    <li>OPENED = 0</li>
+                    <li>LOADING = 200</li>
+                    <li>DONE = 0</li>
+                </ol>
+            </p>
+        </div> 
+    -->
+
+    <div>
+        <label for="userid">Enter your github user id: </label>
+        <input type="text" id="input">
+
+    </div>
+    <div>
+        <button class="btn">GET INFORMATION</button>
+    </div>
+    <div class="main">
+        <div>
+            <img src="" alt="Profile Avatar" id="img">
+        </div>
+        <div class="info">
+            <h2 id="name">Name: <span id="username">Mohit Jaiswal</span></h2>
+            <a href="" id="link" target="_blank">GitHub profile link here</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.btn').addEventListener('click', function() {
+                let username = document.querySelector('#input').value.trim();
+                if (!username) {
+                    alert('Please enter a GitHub username');
+                    return;
+                }
+
+                const requestUrl = `https://api.github.com/users/${username}`;
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', requestUrl);
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+
+                        // Convert it into String to Object
+                        
+                        const data = JSON.parse(xhr.responseText);
+                        document.querySelector('#img').src = data.avatar_url;
+                        document.querySelector('#username').textContent = data.name;
+                        document.querySelector('#link').href = data.html_url;
+                        document.querySelector('.main').style.display = 'flex';
+                    } 
+                    
+                    else if (xhr.readyState === 4) {
+                        alert('User not found');
+                    }
+                };
+                
+                xhr.send();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
